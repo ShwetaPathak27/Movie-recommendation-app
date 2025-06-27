@@ -114,6 +114,14 @@ Shweta Pathak
 GitHub: @ShwetaPathak27
 LinkedIn: https://www.linkedin.com/in/shweta-pathak-09a023295
 
+## 🎥 Demo
+
+👉 [Watch the demo video on LinkedIn](https://www.linkedin.com/posts/shweta-pathak-09a023295_machinelearning-python-datascience-activity-7344437438469066752-u9Nu)
+
+
+
+
+
 📌 Conclusion
 This project is a great example of how machine learning, data engineering, and web development can come together to create an intuitive, intelligent, and responsive recommendation system. Whether you're a developer, data enthusiast, or movie lover — you'll enjoy using and building on this app!
 
