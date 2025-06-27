@@ -98,7 +98,18 @@ movie_recc/
 ├── templates/            # HTML frontend
 ├── static/               # CSS/JS (if any)
 └── requirements.txt      # Python dependencies
+
+## 🔄 Data Pipeline
+
+1. Data loaded from IMDb and Kaggle datasets.
+2. Cleaned and preprocessed (e.g., ratings, text content).
+3. TF-IDF vectorization applied.
+4. FAISS index built for efficient similarity search.
+5. FastAPI serves recommendations through API.
+6. Frontend (HTML + Tailwind + JavaScript) fetches and displays recommendations.
+   
 🧠 Improvements You Can Add
+
 Add collaborative filtering (user-based recommendations)
 
 Use a cloud database and deploy to platforms like Vercel, Railway, or Heroku
@@ -120,8 +131,7 @@ LinkedIn: https://www.linkedin.com/in/shweta-pathak-09a023295
 
 
 
-
-
 📌 Conclusion
+
 This project is a great example of how machine learning, data engineering, and web development can come together to create an intuitive, intelligent, and responsive recommendation system. Whether you're a developer, data enthusiast, or movie lover — you'll enjoy using and building on this app!
 
