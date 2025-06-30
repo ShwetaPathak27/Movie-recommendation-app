@@ -1,34 +1,37 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 import models
 import routes
 from database import engine
 
-# ✅ Step 1: Create tables based on models if they don’t exist
+# Create tables
 models.Base.metadata.create_all(bind=engine)
 
-# ✅ Step 2: Initialize FastAPI app
 app = FastAPI(
     title="Movie Recommendation System",
     description="API for searching, filtering and recommending movies from PostgreSQL",
     version="1.0.0"
 )
 
-# ✅ Step 3: CORS Configuration (adjust frontend URL if needed)
+# Serve static files (e.g. JS, CSS, images if needed)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve the main index.html
+@app.get("/", response_class=FileResponse)
+def read_index():
+    return "static/index.html"
+
+# CORS config — now optional, but keep it open if needed
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  # Update if you're using a different frontend port
+    allow_origins=["*"],  # Allow all for testing; restrict later if deployed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ✅ Step 4: Register routes from `routes.py`
+# Register API routes
 app.include_router(routes.router)
-
-# ✅ Optional Root Route
-@app.get("/")
-def read_root():
-    return {"message": "🎬 Welcome to the Movie Recommendation API"}
-
